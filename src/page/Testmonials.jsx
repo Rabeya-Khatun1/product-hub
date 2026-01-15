@@ -20,7 +20,6 @@ const Testimonials = () => {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
-  // Animation variants
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
@@ -106,7 +105,7 @@ const Testimonials = () => {
     }
   ];
 
-  // Auto-rotation effect
+
   useEffect(() => {
     if (!autoplay) return;
 
@@ -136,7 +135,7 @@ const Testimonials = () => {
 
   return (
     <section className="py-24 lg:py-32 relative overflow-hidden" id="testimonials" ref={containerRef}>
-      {/* Background Elements */}
+   
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-primary/5 to-transparent" />
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
@@ -145,7 +144,7 @@ const Testimonials = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Section Header */}
+
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
@@ -173,7 +172,7 @@ const Testimonials = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 items-center">
-          {/* Stats Sidebar */}
+       
           <motion.div
             variants={staggerContainer}
             initial="initial"
@@ -226,7 +225,7 @@ const Testimonials = () => {
             </div>
           </motion.div>
 
-          {/* Main Testimonial Carousel */}
+    
           <div className="lg:col-span-2">
             <motion.div
               key={activeIndex}
@@ -236,24 +235,24 @@ const Testimonials = () => {
               transition={{ duration: 0.5 }}
               className="relative"
             >
-              {/* Quote Icon */}
+            
               <div className="absolute -top-8 -left-8 z-0">
                 <Quote className="w-24 h-24 text-primary/10" />
               </div>
 
-              {/* Main Card */}
+           
               <div className="bg-base-100 rounded-3xl shadow-2xl border border-base-300 overflow-hidden relative z-10">
-                {/* Gradient Header */}
+
                 <div className={`h-2 bg-gradient-to-r ${activeTestimonial.color}`} />
 
                 <div className="p-8 lg:p-12">
-                  {/* Quote */}
+     
                   <div className="mb-8">
                     <p className="text-2xl lg:text-3xl font-serif italic leading-relaxed mb-8">
                       "{activeTestimonial.quote}"
                     </p>
                     
-                    {/* Metrics */}
+         
                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full">
                       <TrendingUp className="w-4 h-4 text-primary" />
                       <span className="text-sm font-semibold text-primary">
@@ -262,10 +261,10 @@ const Testimonials = () => {
                     </div>
                   </div>
 
-                  {/* User Info */}
+        
                   <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
                     <div className="flex items-center gap-4">
-                      {/* Avatar */}
+             
                       <div className="relative">
                         <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center text-2xl font-bold">
                           {activeTestimonial.avatar}
@@ -275,7 +274,7 @@ const Testimonials = () => {
                         </div>
                       </div>
 
-                      {/* User Details */}
+           
                       <div>
                         <h4 className="text-xl font-bold">
                           {activeTestimonial.name}
@@ -283,7 +282,7 @@ const Testimonials = () => {
                         <p className="opacity-80 mb-1">{activeTestimonial.role}</p>
                         <p className="text-sm opacity-60">{activeTestimonial.company}</p>
                         
-                        {/* Stars */}
+       
                         <div className="flex items-center gap-1 mt-2">
                           {[...Array(activeTestimonial.rating)].map((_, i) => (
                             <Star
@@ -295,7 +294,7 @@ const Testimonials = () => {
                       </div>
                     </div>
 
-                    {/* Video Indicator */}
+                 
                     {activeTestimonial.video && (
                       <div className="flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-lg">
                         <Play className="w-4 h-4 text-blue-600" />
@@ -308,7 +307,7 @@ const Testimonials = () => {
                 </div>
               </div>
 
-              {/* Navigation Controls */}
+      
               <div className="flex items-center justify-center gap-4 mt-8">
                 <button
                   onClick={handlePrev}
@@ -318,7 +317,7 @@ const Testimonials = () => {
                   <ChevronLeft className="w-5 h-5" />
                 </button>
 
-                {/* Dots */}
+        
                 <div className="flex gap-2">
                   {testimonials.map((_, index) => (
                     <button
@@ -342,7 +341,7 @@ const Testimonials = () => {
                   <ChevronRight className="w-5 h-5" />
                 </button>
 
-                {/* Autoplay Toggle */}
+            
                 <button
                   onClick={() => setAutoplay(!autoplay)}
                   className="p-3 rounded-full bg-base-100 border border-base-300 hover:bg-base-200 transition-colors ml-4"
@@ -357,7 +356,7 @@ const Testimonials = () => {
               </div>
             </motion.div>
 
-            {/* Company Logos */}
+        
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
@@ -389,7 +388,7 @@ const Testimonials = () => {
           </div>
         </div>
 
-        {/* CTA Section */}
+ 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}

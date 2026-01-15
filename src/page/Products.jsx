@@ -40,7 +40,7 @@ const Products = () => {
             {...fadeInUp}
             className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
           >
-            {/* Image */}
+    
             <div className="relative h-64 w-full overflow-hidden">
               <img
                 src={item.image}
@@ -49,8 +49,6 @@ const Products = () => {
               />
 
           
-
-              {/* Discount Badge */}
               {item.discount && (
                 <div className="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
                   -{item.discount}%
@@ -58,7 +56,7 @@ const Products = () => {
               )}
             </div>
 
-            {/* Product Info */}
+    
             <div className="p-6 flex flex-col justify-between h-44">
               <h2 className="text-xl font-bold text-slate-800">{item.name}</h2>
               <div className="flex justify-between items-center mt-auto">

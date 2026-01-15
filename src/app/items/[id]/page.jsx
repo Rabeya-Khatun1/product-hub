@@ -22,7 +22,6 @@ import {
   Package
 } from "lucide-react";
 
-// Register GSAP plugins
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 }
@@ -70,7 +69,7 @@ export default function ItemDetailsPage() {
     fetchItem();
   }, [id]);
 
-  // Animation variants
+  
   const pageVariants = {
     initial: { opacity: 0 },
     animate: { 
@@ -200,7 +199,7 @@ useEffect(() => {
   const handleWishlistToggle = () => {
     setIsWishlisted(!isWishlisted);
     
-    // Heart animation
+
     gsap.to(".wishlist-button", {
       scale: 1.3,
       duration: 0.3,
@@ -224,7 +223,7 @@ useEffect(() => {
     } else {
       navigator.clipboard.writeText(window.location.href);
       
-      // Share button animation
+
       gsap.to(".share-button", {
         backgroundColor: "#10B981",
         duration: 0.3,
@@ -300,7 +299,7 @@ useEffect(() => {
       exit="exit"
       className="min-h-screen bg-gradient-to-b from-gray-50 to-white"
     >
-      {/* Notification Toast */}
+
       <AnimatePresence>
         {showNotification && (
           <motion.div
@@ -317,7 +316,7 @@ useEffect(() => {
         )}
       </AnimatePresence>
 
-      {/* Back Navigation */}
+ 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <motion.button
           initial={{ opacity: 0, x: -20 }}
@@ -330,14 +329,13 @@ useEffect(() => {
           <span className="font-medium">Back to Products</span>
         </motion.button>
 
-        {/* Main Content */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Image Gallery */}
+      
           <motion.div
             variants={contentVariants}
             className="space-y-6"
           >
-            {/* Main Image */}
+     
             <motion.div
               variants={imageVariants}
               className="relative aspect-square rounded-3xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 shadow-2xl"
@@ -362,7 +360,7 @@ useEffect(() => {
                 </>
               )}
               
-              {/* Badges */}
+        
               <div className="absolute top-4 left-4 flex gap-2">
                 {item.discount && item.discount > 0 && (
                   <motion.span
@@ -395,7 +393,7 @@ useEffect(() => {
                 )}
               </div>
 
-              {/* Action Buttons */}
+    
               <div className="absolute top-4 right-4 flex flex-col gap-3">
                 <motion.button
                   whileHover={{ scale: 1.1 }}
@@ -419,8 +417,6 @@ useEffect(() => {
                 </motion.button>
               </div>
             </motion.div>
-
-            {/* Thumbnail Images - Single image থাকলে শুধুমাত্র main image show করবে */}
             <motion.div
               variants={staggerVariants}
               initial="hidden"
@@ -452,12 +448,12 @@ useEffect(() => {
             </motion.div>
           </motion.div>
 
-          {/* Product Info */}
+ 
           <motion.div
             variants={contentVariants}
             className="space-y-8"
           >
-            {/* Category & Brand */}
+      
             <div className="space-y-2">
               <div className="flex items-center gap-3 text-sm text-gray-500">
                 <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full font-medium">
@@ -467,7 +463,7 @@ useEffect(() => {
                 <span className="font-medium">{item.brand || "Unknown Brand"}</span>
               </div>
 
-              {/* Title */}
+           
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -477,7 +473,7 @@ useEffect(() => {
                 {item.name}
               </motion.h1>
 
-              {/* Rating */}
+     
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -502,7 +498,7 @@ useEffect(() => {
               </motion.div>
             </div>
 
-            {/* Price Section */}
+       
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -530,7 +526,7 @@ useEffect(() => {
               </p>
             </motion.div>
 
-            {/* Description */}
+          
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -540,8 +536,7 @@ useEffect(() => {
               <p className="text-gray-700 text-lg leading-relaxed">
                 {item.description}
               </p>
-              
-              {/* Features List - যদি features না থাকে তাহলে কিছু default features দেখাবে */}
+            
               <ul className="space-y-2">
                 {(item.features || [
                   "High performance processor",
@@ -563,7 +558,7 @@ useEffect(() => {
               </ul>
             </motion.div>
 
-            {/* Quantity Selector */}
+  
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -593,7 +588,7 @@ useEffect(() => {
                 </div>
               </div>
 
-              {/* Total Price */}
+            
               <div className="p-4 bg-blue-50 rounded-xl">
                 <div className="flex justify-between items-center">
                   <span className="text-gray-600">Total Price:</span>
@@ -604,7 +599,7 @@ useEffect(() => {
               </div>
             </motion.div>
 
-            {/* Action Buttons */}
+       
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -635,7 +630,7 @@ useEffect(() => {
               </motion.button>
             </motion.div>
 
-            {/* Features */}
+ 
             <motion.div
               variants={staggerVariants}
               initial="hidden"
@@ -677,7 +672,7 @@ useEffect(() => {
           </motion.div>
         </div>
 
-        {/* Tabs Section */}
+   
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -730,7 +725,7 @@ useEffect(() => {
                       </div>
                     ))
                   ) : (
-                    // Default specifications যদি না থাকে
+            
                     <>
                       <div className="flex justify-between py-3 border-b">
                         <span className="text-gray-600">Brand</span>

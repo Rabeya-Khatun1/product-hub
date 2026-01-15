@@ -14,27 +14,20 @@ const Hero = () => {
     setIsMounted(true);
   }, []);
 
-  // Handle primary CTA click
   const handlePrimaryClick = () => {
     console.log('Primary CTA clicked');
-    // Add your navigation or action here
-    // Example: router.push('/explore');
   };
 
-  // Handle secondary CTA click
   const handleSecondaryClick = () => {
     console.log('Secondary CTA clicked');
-    // Add your action here
-    // Example: openVideoModal();
   };
 
-  // Handle badge click
+
   const handleBadgeClick = () => {
     console.log('Badge clicked - View changelog');
-    // Add navigation to changelog
+
   };
 
-  // Animation variants for cleaner code
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

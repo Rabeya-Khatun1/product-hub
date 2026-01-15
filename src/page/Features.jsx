@@ -28,7 +28,6 @@ const Features = () => {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
-  // Animation variants
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
@@ -52,7 +51,7 @@ const Features = () => {
     transition: { duration: 0.6, ease: "easeOut" }
   };
 
-  // Feature categories
+
   const featureCategories = [
     {
       id: 'performance',
@@ -143,7 +142,6 @@ const Features = () => {
     }
   ];
 
-  // All features for grid view
   const allFeatures = [
     {
       id: 1,
@@ -231,7 +229,7 @@ const Features = () => {
 
   return (
     <section className="py-24 lg:py-32 relative overflow-hidden" id="features" ref={containerRef}>
-      {/* Background Elements */}
+  
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute top-20 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl"
@@ -259,14 +257,14 @@ const Features = () => {
             repeatType: "reverse"
           }}
         />
-        {/* Grid Pattern */}
+    
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#888_1px,transparent_1px),linear-gradient(to_bottom,#888_1px,transparent_1px)] bg-[size:100px_100px]" />
         </div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Section Header */}
+
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
@@ -289,7 +287,7 @@ const Features = () => {
             Designed for speed, security, and seamless collaboration.
           </p>
 
-          {/* Category Tabs */}
+    
           <motion.div
             variants={staggerContainer}
             initial="initial"
@@ -317,7 +315,7 @@ const Features = () => {
           </motion.div>
         </motion.div>
 
-        {/* Spotlight Features */}
+  
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
@@ -340,18 +338,18 @@ const Features = () => {
                   className="relative group"
                 >
                   <div className="bg-base-100 rounded-2xl border border-base-300 p-6 lg:p-8 hover:shadow-2xl transition-all h-full">
-                    {/* Icon */}
+        
                     <div className="mb-6">
                       <div className={`inline-flex p-4 rounded-2xl bg-${feature.color}/10`}>
                         <Icon className={`w-8 h-8 text-${feature.color}`} />
                       </div>
                     </div>
 
-                    {/* Title & Description */}
+            
                     <h4 className="text-xl font-bold mb-3">{feature.title}</h4>
                     <p className="opacity-70 mb-6">{feature.description}</p>
 
-                    {/* Stats */}
+          
                     <div className="flex items-center justify-between mb-6">
                       <span className="text-sm font-semibold text-primary">
                         {feature.stats}
@@ -359,7 +357,7 @@ const Features = () => {
                       <TrendingUp className="w-5 h-5 text-success" />
                     </div>
 
-                    {/* Metrics */}
+        
                     <div className="flex flex-wrap gap-2 mb-6">
                       {feature.metrics.map((metric, index) => (
                         <span
@@ -371,13 +369,13 @@ const Features = () => {
                       ))}
                     </div>
 
-                    {/* Learn More */}
+                 
                     <div className="flex items-center text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">
                       <span>Learn more</span>
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </div>
 
-                    {/* Hover Effect */}
+                  
                     <motion.div
                       className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r from-${feature.color} to-transparent rounded-full`}
                       initial={{ width: 0 }}
@@ -391,7 +389,6 @@ const Features = () => {
           </div>
         </motion.div>
 
-        {/* Features Grid */}
         <motion.div
           variants={staggerContainer}
           initial="initial"
@@ -424,7 +421,7 @@ const Features = () => {
           </div>
         </motion.div>
 
-        {/* Category Detail View */}
+  
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
@@ -466,7 +463,7 @@ const Features = () => {
                   </div>
                 </div>
                 
-                {/* Stats Card */}
+            
                 <div className="lg:w-1/3">
                   <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-6 border border-primary/20">
                     <h4 className="font-bold text-lg mb-4">Performance Metrics</h4>
@@ -518,7 +515,7 @@ const Features = () => {
                 </div>
               </div>
 
-              {/* Feature Comparison */}
+        
               <div className="bg-base-100/30 backdrop-blur-sm rounded-2xl p-6 border border-base-300">
                 <h4 className="font-bold text-lg mb-6">How We Compare</h4>
                 <div className="overflow-x-auto">
@@ -564,7 +561,7 @@ const Features = () => {
           </div>
         </motion.div>
 
-        {/* CTA Section */}
+    
         <motion.div
           variants={scaleIn}
           initial="initial"

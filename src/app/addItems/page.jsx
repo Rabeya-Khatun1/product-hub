@@ -18,6 +18,7 @@ import {
   Image as ImageIcon,
   Package
 } from 'lucide-react';
+import { toast, ToastContainer } from "react-toastify";
 
 const AddItem = () => {
   const [formData, setFormData] = useState({
@@ -120,7 +121,7 @@ const AddItem = () => {
     setIsSubmitting(true);
     
     try {
-      // Simulate API call
+   
       await new Promise(resolve => setTimeout(resolve, 1500));
       
       console.log('Product submitted:', {
@@ -129,8 +130,8 @@ const AddItem = () => {
       });
       
       setSubmitSuccess(true);
-      
-      // Reset form after success
+      toast.success("Product added successfully!");
+  
       setTimeout(() => {
         setFormData({
           name: '',
@@ -156,8 +157,9 @@ const AddItem = () => {
 
   return (
     <section className="py-12 bg-base-200 min-h-screen">
+      <ToastContainer></ToastContainer>
       <div className="container mx-auto px-4">
-        {/* Success Message */}
+  
         {submitSuccess && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -174,7 +176,7 @@ const AddItem = () => {
           </motion.div>
         )}
 
-        {/* Header */}
+  
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-primary/10 rounded-full">
             <Sparkles className="w-4 h-4 text-primary" />
@@ -192,11 +194,11 @@ const AddItem = () => {
           </p>
         </div>
 
-        {/* Form */}
+
         <div className="max-w-2xl mx-auto">
           <div className="bg-base-100 rounded-2xl shadow-xl border border-base-300 p-6">
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Name & Category */}
+     
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-semibold mb-2">
@@ -248,7 +250,7 @@ const AddItem = () => {
                 </div>
               </div>
 
-              {/* Description */}
+        
               <div>
                 <label className="block text-sm font-semibold mb-2">
                   Description *
@@ -271,7 +273,7 @@ const AddItem = () => {
                 )}
               </div>
 
-              {/* Price & Demo URL */}
+    
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-semibold mb-2">
@@ -317,7 +319,7 @@ const AddItem = () => {
                 </div>
               </div>
 
-              {/* Image Upload */}
+        
               <div>
                 <label className="block text-sm font-semibold mb-2">
                   Product Image
@@ -420,7 +422,7 @@ const AddItem = () => {
                 </div>
               </div>
 
-              {/* Features */}
+      
               <div>
                 <label className="block text-sm font-semibold mb-2">
                   Features
@@ -465,7 +467,7 @@ const AddItem = () => {
                 </div>
               </div>
 
-              {/* Submit Button */}
+      
               <div className="pt-4">
                 {errors.submit && (
                   <p className="mb-4 text-sm text-error flex items-center gap-2">
@@ -494,7 +496,7 @@ const AddItem = () => {
               </div>
             </form>
 
-            {/* Quick Tips */}
+        
             <div className="mt-8 pt-6 border-t border-base-300">
               <h4 className="font-bold mb-3 flex items-center gap-2">
                 <AlertCircle className="w-4 h-4" />

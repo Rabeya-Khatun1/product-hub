@@ -3,7 +3,6 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 
 const Navbar = () => {
-  // ম্যানুয়ালি একটি স্টেট রাখা হয়েছে কোন ট্যাবটি একটিভ তা বোঝার জন্য
   const [activeTab, setActiveTab] = useState('/');
 
   const links = (
@@ -39,7 +38,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-base-100 shadow-md px-4">
+    <div className="navbar bg-base-100 shadow-md px-4 sticky top-0 z-50">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">

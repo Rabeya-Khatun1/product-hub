@@ -64,11 +64,11 @@ export default function ItemsList() {
         setItems(data);
         setFilteredItems(data);
         
-        // Extract unique categories
+       
         const uniqueCategories = [...new Set(data.map(item => item.category).filter(Boolean))];
         setCategories(["all", ...uniqueCategories]);
         
-        // Initialize GSAP animations
+ 
         if (data.length > 0) {
           initAnimations();
         }
@@ -82,14 +82,14 @@ export default function ItemsList() {
 
     fetchItems();
 
-    // Cleanup GSAP animations
+  
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
 
   const initAnimations = () => {
-    // Stagger animation for items on load
+     
     gsap.from(".item-card", {
       y: 30,
       opacity: 0,
@@ -99,7 +99,7 @@ export default function ItemsList() {
       delay: 0.2
     });
 
-    // Scroll animations for cards
+    
     gsap.utils.toArray(".item-card").forEach((card, i) => {
       gsap.from(card, {
         scrollTrigger: {
@@ -119,12 +119,11 @@ export default function ItemsList() {
   useEffect(() => {
     let result = [...items];
 
-    // Filter by category
+   
     if (selectedCategory !== "all") {
       result = result.filter(item => item.category === selectedCategory);
     }
-
-    // Filter by search term
+ 
     if (searchTerm) {
       const term = searchTerm.toLowerCase();
       result = result.filter(item => 
@@ -134,7 +133,7 @@ export default function ItemsList() {
       );
     }
 
-    // Sort items
+    
     result.sort((a, b) => {
       switch (sortBy) {
         case "price-asc":
@@ -204,7 +203,7 @@ export default function ItemsList() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-8">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+    
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -218,8 +217,7 @@ export default function ItemsList() {
             Discover our curated selection of premium items
           </p>
         </motion.div>
-
-        {/* Controls */}
+ 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -227,7 +225,7 @@ export default function ItemsList() {
           className="mb-8 p-6 bg-white rounded-2xl shadow-sm border border-gray-100"
         >
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-            {/* Search */}
+   
             <div className="flex-1 max-w-md">
               <div className="relative">
                 <input
@@ -242,10 +240,9 @@ export default function ItemsList() {
                 </div>
               </div>
             </div>
-
-            {/* Controls Group */}
+ 
             <div className="flex flex-wrap items-center gap-4">
-              {/* Category Filter */}
+  
               <div className="relative">
                 <select
                   value={selectedCategory}
@@ -261,7 +258,7 @@ export default function ItemsList() {
                 <Filter className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
               </div>
 
-              {/* Sort */}
+              
               <div className="relative">
                 <select
                   value={sortBy}
@@ -275,7 +272,7 @@ export default function ItemsList() {
                 </select>
               </div>
 
-              {/* View Toggle */}
+            
               <div className="flex border border-gray-300 rounded-lg overflow-hidden">
                 <button
                   onClick={() => setViewMode("grid")}
@@ -293,8 +290,7 @@ export default function ItemsList() {
             </div>
           </div>
         </motion.div>
-
-        {/* Results Count */}
+ 
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -307,7 +303,7 @@ export default function ItemsList() {
           </p>
         </motion.div>
 
-        {/* Items Grid/List */}
+ 
         <AnimatePresence mode="wait">
           {filteredItems.length === 0 ? (
             <motion.div
@@ -363,7 +359,7 @@ export default function ItemsList() {
                     shadow-sm hover:shadow-xl transition-all duration-300
                     cursor-pointer h-full
                   `}>
-                    {/* Image Container */}
+               
                     <div className={`
                       relative overflow-hidden
                       ${viewMode === "grid" ? "aspect-square" : "md:w-64 md:shrink-0"}
@@ -398,19 +394,19 @@ export default function ItemsList() {
                       )}
                     </div>
 
-                    {/* Content */}
+                  
                     <div className={`
                       ${viewMode === "grid" ? "flex-1 p-5" : "flex-1 p-6"}
                       flex flex-col
                     `}>
-                      {/* Category */}
+               
                       {item.category && (
                         <span className="text-xs font-semibold text-blue-600 uppercase tracking-wider mb-2">
                           {item.category}
                         </span>
                       )}
 
-                      {/* Title */}
+                  
                       <h3 className={`
                         font-bold text-gray-900 mb-2
                         ${viewMode === "grid" ? "text-lg" : "text-xl"}
@@ -419,14 +415,14 @@ export default function ItemsList() {
                         {item.name}
                       </h3>
 
-                      {/* Description */}
+                
                       {item.description && viewMode === "list" && (
                         <p className="text-gray-600 mb-4 line-clamp-2">
                           {item.description}
                         </p>
                       )}
 
-                      {/* Price */}
+            
                       <div className="mt-auto pt-4">
                         <div className="flex items-center justify-between">
                           <div>

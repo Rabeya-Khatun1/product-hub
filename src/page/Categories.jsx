@@ -22,7 +22,7 @@ const Categories = () => {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
-  // Animation variants
+
   const staggerContainer = {
     initial: { opacity: 0 },
     animate: {
@@ -132,17 +132,17 @@ const Categories = () => {
   const handleCategoryClick = (categoryId) => {
     setActiveCategory(categoryId);
     console.log(`Selected category: ${categoryId}`);
-    // Add your filtering logic here
+   
   };
 
   const handleTagClick = (tag) => {
     console.log(`Selected tag: ${tag}`);
-    // Add tag filtering logic here
+    
   };
 
   return (
     <section className="py-24 overflow-hidden relative" ref={containerRef} id="categories">
-      {/* Background Elements */}
+    
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
@@ -161,7 +161,7 @@ const Categories = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Section Header */}
+       
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
@@ -186,7 +186,7 @@ const Categories = () => {
             Filter by technology, use case, or popularity.
           </p>
 
-          {/* Search and Filter Bar */}
+
           <div className="max-w-2xl mx-auto mb-12">
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="relative flex-1">
@@ -216,7 +216,7 @@ const Categories = () => {
           </div>
         </motion.div>
 
-        {/* Categories Grid */}
+
         <motion.div
           variants={staggerContainer}
           initial="initial"
@@ -240,10 +240,10 @@ const Categories = () => {
                     : 'border-base-300 bg-base-100 hover:border-primary/30'
                 }`}
               >
-                {/* Background Gradient */}
+          
                 <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
                 
-                {/* Icon Container */}
+        
                 <div className={`relative mb-4 p-3 rounded-xl w-fit ${
                   isActive 
                     ? 'bg-primary text-primary-content' 
@@ -252,7 +252,7 @@ const Categories = () => {
                   <Icon className={`w-6 h-6 ${isActive ? 'text-white' : 'text-base-content'}`} />
                 </div>
                 
-                {/* Category Info */}
+         
                 <div className="relative">
                   <h3 className="text-lg font-semibold mb-2 text-left group-hover:text-primary transition-colors">
                     {category.name}
@@ -261,7 +261,7 @@ const Categories = () => {
                     {category.description}
                   </p>
                   
-                  {/* Count Badge */}
+     
                   <div className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium ${
                     isActive
                       ? 'bg-primary text-primary-content'
@@ -272,7 +272,7 @@ const Categories = () => {
                   </div>
                 </div>
 
-                {/* Active Indicator */}
+           
                 {isActive && (
                   <motion.div
                     layoutId="activeCategory"
@@ -287,7 +287,6 @@ const Categories = () => {
           })}
         </motion.div>
 
-        {/* Popular Tags */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
@@ -317,7 +316,7 @@ const Categories = () => {
           </div>
         </motion.div>
 
-        {/* Active Category Showcase */}
+ 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
@@ -365,7 +364,7 @@ const Categories = () => {
           </div>
         </motion.div>
 
-        {/* Quick Stats */}
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}

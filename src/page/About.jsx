@@ -7,7 +7,7 @@ const About = () => {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
-  // Animation variants
+ 
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
@@ -71,7 +71,7 @@ const About = () => {
 
   return (
     <section className="py-24 lg:py-32 overflow-hidden relative" id="about">
-      {/* Background Elements */}
+
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
         <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
@@ -83,13 +83,13 @@ const About = () => {
           ref={containerRef} 
           className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center"
         >
-          {/* Left Content */}
+        
           <motion.div
             variants={staggerContainer}
             initial="initial"
             animate={isInView ? "animate" : "initial"}
           >
-            {/* Badge */}
+   
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
@@ -102,7 +102,7 @@ const About = () => {
               </span>
             </motion.div>
 
-            {/* Title */}
+  
             <motion.h2
               variants={fadeInUp}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6"
@@ -114,7 +114,7 @@ const About = () => {
               Innovation
             </motion.h2>
 
-            {/* Description */}
+  
             <motion.p
               variants={fadeInUp}
               className="text-lg lg:text-xl opacity-80 leading-relaxed mb-8"
@@ -123,7 +123,6 @@ const About = () => {
               handle the complexity of modern digital commerce and asset management at scale.
             </motion.p>
 
-            {/* Features List */}
             <motion.div
               variants={fadeInUp}
               className="mb-10"
@@ -144,7 +143,6 @@ const About = () => {
               </ul>
             </motion.div>
 
-            {/* Stats Grid */}
             <motion.div
               variants={staggerContainer}
               className="grid grid-cols-2 gap-4 sm:gap-6"
@@ -173,18 +171,18 @@ const About = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Visual */}
+ 
           <motion.div
             initial={{ opacity: 0, x: 100, scale: 0.95 }}
             animate={isInView ? { opacity: 1, x: 0, scale: 1 } : { opacity: 0, x: 100, scale: 0.95 }}
             transition={{ duration: 1, ease: "easeOut" }}
             className="relative"
           >
-            {/* Main Visual Container */}
+       
             <div className="relative bg-gradient-to-br from-base-100/10 to-base-300/10 h-[500px] sm:h-[600px] rounded-[2.5rem] overflow-hidden border border-white/10 backdrop-blur-sm shadow-2xl">
-              {/* Dashboard Mockup */}
+        
               <div className="absolute inset-0 p-6">
-                {/* Mockup Header */}
+        
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary" />
@@ -193,7 +191,7 @@ const About = () => {
                   <div className="w-10 h-10 rounded-full bg-base-300/50" />
                 </div>
 
-                {/* Stats Cards */}
+             
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   {[1, 2, 3, 4].map((i) => (
                     <motion.div
@@ -219,7 +217,7 @@ const About = () => {
                   ))}
                 </div>
 
-                {/* Chart Area */}
+            
                 <div className="bg-base-100/10 rounded-2xl p-4 border border-base-300/30 mb-6">
                   <div className="flex justify-between items-center mb-4">
                     <div className="w-32 h-3 bg-base-300/50 rounded-full" />
@@ -230,7 +228,7 @@ const About = () => {
                     </div>
                   </div>
                   <div className="h-32 relative">
-                    {/* Animated Chart Lines */}
+                
                     <svg className="w-full h-full" viewBox="0 0 300 120">
                       <motion.path
                         d="M0,60 C50,40 100,80 150,30 C200,-20 250,100 300,50"
@@ -251,7 +249,6 @@ const About = () => {
                   </div>
                 </div>
 
-                {/* Activity Feed */}
                 <div className="space-y-3">
                   {[1, 2, 3].map((i) => (
                     <div key={i} className="flex items-center gap-3">
@@ -265,7 +262,6 @@ const About = () => {
                 </div>
               </div>
 
-              {/* Floating Elements */}
               <motion.div
                 animate={{
                   y: [0, -20, 0],
@@ -293,12 +289,12 @@ const About = () => {
               />
             </div>
 
-            {/* Decorative Background */}
+         
             <div className="absolute -z-10 top-8 -right-8 w-full h-full bg-gradient-to-br from-primary/5 to-secondary/5 rounded-[2.5rem] blur-xl" />
           </motion.div>
         </div>
 
-        {/* Trust Badges */}
+ 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}

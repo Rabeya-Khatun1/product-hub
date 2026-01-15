@@ -34,7 +34,7 @@ const CallAction = () => {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
-  // Animation variants
+ 
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
@@ -74,8 +74,7 @@ const CallAction = () => {
       ...prev,
       [name]: value
     }));
-    
-    // Clear error for this field
+   
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -116,7 +115,7 @@ const CallAction = () => {
     setIsSubmitting(true);
     
     try {
-      // Simulate API call
+
       await new Promise(resolve => setTimeout(resolve, 1500));
       
  
@@ -132,7 +131,7 @@ const CallAction = () => {
         projectType: ''
       });
       
-      // Reset success message after 5 seconds
+
       setTimeout(() => {
         setSubmitSuccess(false);
       }, 5000);
@@ -161,7 +160,7 @@ const CallAction = () => {
 
   return (
     <section className="py-24 lg:py-32 relative overflow-hidden" id="contact" ref={containerRef}>
-      {/* Background Elements */}
+
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-primary/5 to-transparent" />
         <motion.div
@@ -190,14 +189,14 @@ const CallAction = () => {
             repeatType: "reverse"
           }}
         />
-        {/* Grid Pattern */}
+
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#888_1px,transparent_1px),linear-gradient(to_bottom,#888_1px,transparent_1px)] bg-[size:80px_80px]" />
         </div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Success Message */}
+    
         <AnimatePresence>
           {submitSuccess && (
             <motion.div
@@ -221,7 +220,7 @@ const CallAction = () => {
           )}
         </AnimatePresence>
 
-        {/* Section Header */}
+     
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
@@ -246,7 +245,7 @@ const CallAction = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
-          {/* Contact Info Sidebar */}
+      
           <motion.div
             variants={staggerContainer}
             initial="initial"
@@ -254,7 +253,7 @@ const CallAction = () => {
             className="lg:col-span-1"
           >
             <div className="space-y-8">
-              {/* Contact Cards */}
+      
               <motion.div
                 variants={fadeInUp}
                 className="bg-base-100/50 backdrop-blur-sm border border-base-300 rounded-2xl p-6 hover:shadow-lg transition-shadow"
@@ -319,7 +318,7 @@ const CallAction = () => {
                 </div>
               </motion.div>
 
-              {/* Support Hours */}
+        
               <motion.div
                 variants={fadeInUp}
                 className="bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/10 rounded-2xl p-6"
@@ -344,7 +343,6 @@ const CallAction = () => {
                 </div>
               </motion.div>
 
-              {/* Guarantee */}
               <motion.div
                 variants={fadeInUp}
                 className="bg-gradient-to-br from-success/5 to-success/10 border border-success/10 rounded-2xl p-6"
@@ -361,7 +359,7 @@ const CallAction = () => {
             </div>
           </motion.div>
 
-          {/* Contact Form */}
+   
           <div className="lg:col-span-2">
             <motion.div
               initial={{ opacity: 0, x: 40 }}
@@ -369,7 +367,7 @@ const CallAction = () => {
               transition={{ duration: 0.8 }}
               className="bg-base-100 rounded-3xl shadow-2xl border border-base-300 overflow-hidden"
             >
-              {/* Form Header */}
+    
               <div className="bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 p-8 border-b border-base-300">
                 <h3 className="text-2xl font-bold mb-2">Send us a Message</h3>
                 <p className="opacity-70">
@@ -378,7 +376,7 @@ const CallAction = () => {
               </div>
 
               <form onSubmit={handleSubmit} className="p-8">
-                {/* Project Type Selection */}
+
                 <div className="mb-8">
                   <label className="block text-sm font-semibold mb-4">
                     What type of project are you interested in?
@@ -403,7 +401,7 @@ const CallAction = () => {
                 </div>
 
                 <div className="space-y-6">
-                  {/* Name & Email */}
+          
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-semibold mb-2">
@@ -452,7 +450,7 @@ const CallAction = () => {
                     </div>
                   </div>
 
-                  {/* Company */}
+            
                   <div>
                     <label className="block text-sm font-semibold mb-2">
                       Company Name (Optional)
@@ -467,7 +465,7 @@ const CallAction = () => {
                     />
                   </div>
 
-                  {/* Preferred Contact Method */}
+          
                   <div>
                     <label className="block text-sm font-semibold mb-4">
                       Preferred Contact Method
@@ -494,7 +492,6 @@ const CallAction = () => {
                     </div>
                   </div>
 
-                  {/* Message */}
                   <div>
                     <label className="block text-sm font-semibold mb-2">
                       <MessageSquare className="inline w-4 h-4 mr-2" />
@@ -518,7 +515,7 @@ const CallAction = () => {
                     )}
                   </div>
 
-                  {/* Submit Button */}
+            
                   <div className="pt-4">
                     {errors.submit && (
                       <p className="mb-4 text-sm text-error flex items-center gap-2">
@@ -555,7 +552,7 @@ const CallAction = () => {
               </form>
             </motion.div>
 
-            {/* Additional Contact Methods */}
+      
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
@@ -601,7 +598,7 @@ const CallAction = () => {
           </div>
         </div>
 
-        {/* Map/CTA Section */}
+   
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
@@ -620,8 +617,7 @@ const CallAction = () => {
                   Schedule Visit
                 </button>
               </div>
-              
-              {/* Map Placeholder */}
+        
               <div className="h-64 bg-gradient-to-br from-base-100 to-base-200 rounded-2xl overflow-hidden border border-base-300 relative">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
