@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const fadeInUp = {
@@ -63,9 +64,10 @@ const Products = () => {
                 <span className="text-2xl font-extrabold text-slate-900">
                   ${item.price}
                 </span>
-                <button className="btn btn-primary btn-sm rounded-lg">
-                  Buy Now
-                </button>
+              <Link href={`/items/${item._id}`}>
+                <button className="text-blue-600">
+                  View Details
+                </button></Link>
               </div>
             </div>
           </motion.div>

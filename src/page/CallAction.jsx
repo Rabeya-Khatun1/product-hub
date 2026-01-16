@@ -605,30 +605,7 @@ const CallAction = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-16"
         >
-          <div className="bg-gradient-to-r from-primary/5 via-secondary/5 to-primary/5 rounded-3xl p-8 border border-white/10 backdrop-blur-sm">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h3 className="text-2xl font-bold mb-4">Visit Our Office</h3>
-                <p className="opacity-80 mb-6">
-                  Schedule a visit to our San Francisco headquarters. 
-                  Meet the team and see our workspace in action.
-                </p>
-                <button className="btn btn-primary">
-                  Schedule Visit
-                </button>
-              </div>
-        
-              <div className="h-64 bg-gradient-to-br from-base-100 to-base-200 rounded-2xl overflow-hidden border border-base-300 relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="w-12 h-12 text-primary/50 mx-auto mb-4" />
-                    <p className="font-medium">San Francisco Office</p>
-                    <p className="text-sm opacity-70">123 Innovation Drive</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      
         </motion.div>
       </div>
     </section>

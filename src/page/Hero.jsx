@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from "framer-motion";
+import Link from 'next/link';
 
 const Hero = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -170,7 +171,7 @@ const Hero = () => {
             className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6 mb-12 md:mb-16"
           >
           
-            <motion.button
+      <Link href='/addItems'>      <motion.button
               onClick={handlePrimaryClick}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
@@ -179,7 +180,7 @@ const Hero = () => {
               whileTap={{ scale: 0.95 }}
             >
               <span className="relative z-10 flex items-center justify-center gap-2 font-semibold tracking-wide">
-                Explore Hub
+                Add a Item
                 <motion.svg
                   className="w-5 h-5"
                   fill="none"
@@ -197,10 +198,10 @@ const Hero = () => {
                 animate={{ x: isHovered ? "100%" : "-100%" }}
                 transition={{ duration: 0.6 }}
               />
-            </motion.button>
+            </motion.button></Link>
 
        
-            <motion.button
+      <Link href='/items'>      <motion.button
               onClick={handleSecondaryClick}
               className="btn btn-ghost btn-lg rounded-full px-6 md:px-8 group min-w-[180px]"
               whileHover={{ scale: 1.05 }}
@@ -218,9 +219,9 @@ const Hero = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </motion.svg>
-                Watch Demo
+                All Products
               </span>
-            </motion.button>
+            </motion.button></Link>
           </motion.div>
 
      

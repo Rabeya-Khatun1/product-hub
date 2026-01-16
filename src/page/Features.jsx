@@ -271,48 +271,7 @@ const Features = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16 lg:mb-20"
         >
-          <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-primary/10 backdrop-blur-sm rounded-full border border-primary/20">
-            <Rocket className="w-4 h-4 text-primary" />
-            <span className="text-sm font-semibold text-primary">
-              Why Choose Product Hub
-            </span>
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-            Built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Modern</span> Teams
-          </h2>
-          
-          <p className="text-lg md:text-xl opacity-70 max-w-3xl mx-auto mb-12">
-            Everything you need to build, scale, and secure your digital products in one unified platform.
-            Designed for speed, security, and seamless collaboration.
-          </p>
 
-    
-          <motion.div
-            variants={staggerContainer}
-            initial="initial"
-            animate={isInView ? "animate" : "initial"}
-            className="flex flex-wrap justify-center gap-4 mb-12"
-          >
-            {featureCategories.map((category) => {
-              const Icon = category.icon;
-              return (
-                <motion.button
-                  key={category.id}
-                  variants={fadeInUp}
-                  onClick={() => setActiveTab(category.id)}
-                  className={`px-6 py-3 rounded-full border-2 transition-all flex items-center gap-3 ${
-                    activeTab === category.id
-                      ? `bg-gradient-to-r ${category.color} border-transparent text-white`
-                      : 'border-base-300 hover:border-primary/50 hover:bg-base-200/50'
-                  }`}
-                >
-                  <Icon className="w-5 h-5" />
-                  <span className="font-semibold">{category.name}</span>
-                </motion.button>
-              );
-            })}
-          </motion.div>
         </motion.div>
 
   
@@ -568,40 +527,7 @@ const Features = () => {
           animate={isInView ? "animate" : "initial"}
           className="text-center"
         >
-          <div className="bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 rounded-3xl p-8 lg:p-12 border border-white/10 backdrop-blur-sm">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-              <div className="lg:w-2/3 text-left">
-                <h3 className="text-2xl lg:text-3xl font-bold mb-4">
-                  Ready to experience all features?
-                </h3>
-                <p className="opacity-80 mb-6">
-                  Join thousands of teams who have transformed their workflow with Product Hub.
-                  Start your free trial today.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  {[
-                    'No credit card required',
-                    'Full feature access',
-                    '24/7 support',
-                    'Cancel anytime'
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-success" />
-                      <span className="text-sm">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              
-              <div className="lg:w-1/3">
-                <button className="btn btn-primary btn-lg rounded-full px-8 w-full">
-                  <Sparkles className="w-5 h-5 mr-2" />
-                  Start Free Trial
-                </button>
-                <p className="text-sm opacity-60 mt-4">14-day trial • No setup fees</p>
-              </div>
-            </div>
-          </div>
+        
         </motion.div>
       </div>
     </section>

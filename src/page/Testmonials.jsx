@@ -395,25 +395,6 @@ const Testimonials = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-20 text-center"
         >
-          <div className="bg-gradient-to-r from-primary/5 via-secondary/5 to-primary/5 rounded-3xl p-8 lg:p-12 border border-white/10 backdrop-blur-sm">
-            <h3 className="text-2xl lg:text-3xl font-bold mb-6">
-              Ready to join thousands of successful teams?
-            </h3>
-            <p className="opacity-80 mb-8 max-w-2xl mx-auto">
-              Start your journey with Product Hub today and transform your team's workflow.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn btn-primary btn-lg rounded-full px-8">
-                Start Free Trial
-              </button>
-              <button className="btn btn-ghost btn-lg rounded-full px-8">
-                View All Testimonials
-              </button>
-            </div>
-            <p className="text-sm opacity-50 mt-8">
-              No credit card required • 14-day free trial • Cancel anytime
-            </p>
-          </div>
         </motion.div>
       </div>
     </section>

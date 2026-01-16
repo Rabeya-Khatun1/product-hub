@@ -15,6 +15,7 @@ import {
   Filter,
   X
 } from 'lucide-react';
+import Link from "next/link";
 
 const Categories = () => {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -335,20 +336,22 @@ const Categories = () => {
                 Each product is vetted for quality, regularly updated, and comes with professional support.
               </p>
               <div className="flex gap-4">
+               <Link href='/items'>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="px-6 py-3 bg-primary text-primary-content rounded-xl font-medium"
                 >
                   View All Products
-                </motion.button>
+                </motion.button></Link>
+                <Link href='/items'>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="px-6 py-3 bg-base-100 border border-base-300 rounded-xl font-medium"
                 >
                   Sort by Popularity
-                </motion.button>
+                </motion.button></Link>
               </div>
             </div>
             
