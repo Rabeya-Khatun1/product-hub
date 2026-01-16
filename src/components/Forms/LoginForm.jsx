@@ -19,6 +19,11 @@ const LoginForm = () => {
     }
   };
 
+  const handleDemoLogin = () => {
+    setEmail("rabeya@123.com");
+    setPassword("rabeya123");
+  };
+
   return (
     <form onSubmit={handleLogin} className="flex flex-col gap-4">
     
@@ -67,6 +72,7 @@ const LoginForm = () => {
       >
         Login
       </button>
+       <button onClick={handleDemoLogin} className="btn btn-neutral w-full mt-2">Demo Login</button>
     </form>
   );
 };

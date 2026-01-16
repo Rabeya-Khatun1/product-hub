@@ -5,6 +5,8 @@ import LoginForm from "@/components/Forms/LoginForm";
 import GoogleLogin from "@/components/buttons/GoogleLogin";
 
 const Login = () => {
+
+
   return (
     <div className="min-h-screen bg-base-200 flex items-center justify-center px-4">
       <div className="container max-w-6xl mx-auto flex flex-col items-center gap-12">
@@ -22,6 +24,7 @@ const Login = () => {
               <GoogleLogin></GoogleLogin>
             </div>
           </div>
+         
         </div>
 
       </div>
