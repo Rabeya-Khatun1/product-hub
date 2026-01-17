@@ -1,9 +1,25 @@
 "use client";
 import Link from 'next/link';
-import React, { useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
 
 const Navbar = () => {
   const [activeTab, setActiveTab] = useState('/');
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const router = useRouter();
+    const pathname = usePathname();
+  useEffect(() => {
+    const auth = document.cookie.split("; ").find((row) => row.startsWith("auth="));
+
+    setIsLoggedIn(auth?.split("=")[1] === "true");
+  }, [pathname]); 
+
+  const handleLogout = () => {
+    document.cookie = "auth=; path=/; max-age=0";
+    setIsLoggedIn(false);
+    router.push("/login");
+  };
+
 
   const links = (
     <>
@@ -72,9 +88,17 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-end">
-        <Link href="/login">
-          <button className="btn btn-primary">Login</button>
-        </Link>
+      {isLoggedIn ? ( 
+          <button onClick={handleLogout} className="btn btn-primary">
+            Logout
+          </button>
+        ) : (
+          <Link href="/login">
+            <button className="btn btn-primary">
+              Login
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );
